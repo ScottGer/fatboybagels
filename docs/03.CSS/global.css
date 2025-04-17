@@ -18,10 +18,11 @@
     box-sizing: border-box;
 }
 
+/* --- Body --- */
 body {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    flex-direction: column; /* Ensures that the body layout adapts to content length */
+    min-height: 100vh; /* Full viewport height */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--color-bg);
     color: var(--color-text);
@@ -154,10 +155,7 @@ footer {
     padding: 16px 0;
     text-align: center;
     font-size: 0.9rem;
-    position: fixed; /* Ensures the footer is always at the bottom */
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    position: relative; /* No longer fixed to the bottom of the viewport */
     z-index: 10;
 }
 
@@ -178,14 +176,14 @@ footer p {
 main {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensures space between sections */
+    justify-content: flex-start; /* Flex content starts from the top */
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
     margin-top: 45px; /* Adjusted based on header height */
-    min-height: 100vh; /* Ensures main section takes full viewport height */
-    padding-bottom: 80px; /* Adds buffer at the bottom so content is not hidden behind the footer */
+    flex-grow: 1; /* Ensures main content takes the remaining space */
+    padding-bottom: 80px; /* Adds space at the bottom to prevent overlap with footer */
 }
 
 /* --- Sections --- */
