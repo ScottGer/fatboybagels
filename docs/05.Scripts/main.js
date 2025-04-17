@@ -20,6 +20,6 @@ function loadHTML(targetId, filePath) {
   
   // Wait until the DOM is fully loaded before inserting header and footer
   document.addEventListener("DOMContentLoaded", function () {
-    loadHTML("header-container", "components/header.html");
-    loadHTML("footer-container", "components/footer.html");
+    loadHTML("header-container", "02.Components/header.html");
+    loadHTML("footer-container", "02.Components/footer.html");
   });
