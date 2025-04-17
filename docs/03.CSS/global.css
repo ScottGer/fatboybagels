@@ -88,12 +88,54 @@ p {
     background-color: var(--color-secondary);
 }
 
-/* --- Header/Footer Basic Styling (placeholder) --- */
+/* --- Header --- */
 header {
-    background-color: var(--color-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-primary); /* You can replace with any color */
     color: var(--color-white);
-    padding: 20px 0;
+    padding: 10px 20px;
+    z-index: 100; /* Make sure it sits on top of other content */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: adds a slight shadow for depth */
 }
+
+header .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color-white); /* White logo text */
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: 1rem;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+    border-radius: 4px;
+}
+
+/* --- Footer --- */
 
 footer {
     background-color: rgba(26, 26, 26, 0.9); /* Transparent black */
@@ -108,19 +150,6 @@ footer {
 footer p {
     margin: 0;
     opacity: 0.85;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-nav a {
-    color: var(--color-white);
-    font-weight: 500;
-    text-transform: uppercase;
 }
 
 /* --- Utility Spacing --- */
