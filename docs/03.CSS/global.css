@@ -110,18 +110,29 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--color-primary); /* You can replace with any color */
-    color: var(--color-white);
     padding: 10px 20px;
-    z-index: 100; /* Make sure it sits on top of other content */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: adds a slight shadow for depth */
+    z-index: 100;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: none;
+}
+
+header.scrolled {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 header .logo a {
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
-    color: var(--color-white); /* White logo text */
+    color: var(--color-primary); /* default black */
+    transition: color 0.3s ease;
+}
+
+header.scrolled .logo a {
+    color: var(--color-white);
 }
 
 nav ul {
@@ -137,10 +148,14 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: var(--color-white);
+    color: var(--color-primary); /* default black */
     font-size: 1rem;
     padding: 8px 16px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header.scrolled nav ul li a {
+    color: var(--color-white);
 }
 
 nav ul li a:hover {
